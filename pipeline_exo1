@@ -9,17 +9,13 @@ password(name: 'SONAR_SERVER_PWD', description: 'Enter SONAR password')
 
 }
 stages {
-    stage('Printing name') {
+    stage('Printing name and description') {
         steps {
             script {
                 def name = "${params.NAME}"
-                def gender = "${params.GENDER}"
-                if(gender == "Male") {
-                echo "Mr. $name"
-                        }
-                else {
-                echo "Mrs. $name"
-                }
+                def desc = "${params.DESC}"
+                echo "Your name is: $name"
+                echo "the description is: $desc"
             }
         }
     }
